@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html class="fade-in">
+	<head>
+		<link rel="stylesheet" type="text/css" href="reset.css"> <!-- Standardized CSS reset -->
+		<link rel="stylesheet" type="text/css" href="style.css"> <!-- Actual stylesheet -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Material icons -->
+		<link rel="icon" type="image/x-icon" href="pie.png"/>
+		<meta charset="UTF-8">
+		<title>As Easy As Pie-thon</title>
+		<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+	</head>
+
+	<body>
+		<div id="container-flex">
+			<div id="navbar">
+				<div id="logo-container">
+					<img id="logo" src="pie.png">
+				</div>
+				<ul>
+					<li class="selected"><div class="navbar-buttons"><a class="unselectable" id="link1" onclick="changeSite(this.id, 'landing.html')"><i class="material-icons md-dark md-36">home</i><span class="navbar-text selected">Home</span></a></div></li>
+					<li><div class="navbar-buttons"><a class="unselectable" id="link2" onclick="changeSite(this.id, 'intro.html')"><i class="material-icons md-light md-inactive md-36">subject</i><span class="navbar-text unselected">Quiz</span></a></div></li>
+					<li><div class="navbar-buttons"><a class="unselectable" id="link3" onclick="changeSite(this.id, 'tutorials.html')"><i class="material-icons md-light md-inactive md-36">assignment</i><span class="navbar-text unselected">Tutorials</span></a></div></li>
+					<li><div class="navbar-buttons"><a class="unselectable" id="link4" onclick="changeSite(this.id, 'about.html')"><i class="material-icons md-light md-inactive md-36">info</i><span class="navbar-text unselected">About us</span></a></div></li>
+					<li><div class="navbar-buttons"><a class="unselectable" id="link5" onclick="changeSite(this.id, 'contact.html')"><i class="material-icons md-light md-inactive md-36">contact_support</i><span class="navbar-text unselected">Contact</span></a></div></li>
+				</ul>
+				<div id="navbar-form">
+					<form>
+						<input type="search" placeholder="Search..">
+						<button type="submit"><i class="material-icons md-dark md-18">search</i></button>
+					</form>
+					<hr class="divider">
+				</div>
+				<span id="copyright" class="navbar-text unselected unselectable"><br>Copyright © 2020 As Easy As Piethon Foundation.</span>
+				<div id="social-container">
+					<a class="unselectable navbar-text social navbar-options" target="_blank" href="https://facebook.com"><ion-icon size="large" name="logo-facebook"></ion-icon></a>
+					<a class="unselectable navbar-text social navbar-options" target="_blank" href="https://twitter.com"><ion-icon size="large" name="logo-twitter"></ion-icon></a>
+					<a class="unselectable navbar-text social navbar-options" target="_blank" href="https://github.com/totenk0pf"><ion-icon size="large" name="logo-github"></ion-icon></a>
+				</div>
+				<hr class="divider">
+				<div id="option-container">
+					<a class="unselectable social navbar-options" onclick="toggleConfig()"><i class="material-icons md-inactive md-36">settings</i></a>
+					<a class="unselectable social navbar-options" onclick="dispNavbar()"><i id="toggler" class="material-icons md-inactive md-36">arrow_back</i></a>
+				</div>
+			</div>
+			<div id="content">
+				<iframe class="unselectable" id="site-display" src="landing.html"></iframe>
+				<div id="overlay"></div>
+			</div>
+		</div>
+		<div id="pane-container" class="removed hidden">
+			<div id="option-pane">
+				<div>
+					<span>Theme:</span><br><br>
+					<a onclick="switchTheme('dark')" tabindex="1" id="dark-selector">Dark<br><br><div id="dark-rep"></div></a>
+					<a onclick="switchTheme('light')" tabindex="2" id="light-selector">Light<br><br><div id="light-rep"></div></a>
+				</div><br>
+				<a onclick="toggleConfig()"><i class="material-icons md-inactive md-24">close</i></a>
+			</div>
+		</div>
+		<script src="navbar.js"></script>
+	</body>
+</html>
